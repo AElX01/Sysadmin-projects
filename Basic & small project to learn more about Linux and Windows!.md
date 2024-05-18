@@ -29,7 +29,7 @@ Get-NetAdapter #list all network adapters
 Get-NetAdapter | Select ifIndex #we can obtain the index of the network adapter we'll configure
 ```
 	
-	![screenshot](https://github.com/AElX01/Sysadmin-projects/blob/main/Images/Pasted%20image%2020240517151825.png)
+	![image](https://github.com/AElX01/Sysadmin-projects/blob/5c66597a269ca16477ab6f3d95545071caba1f76/Images/Pasted%20image%2020240517151825.png)
 	Remember we have the Host-Only network adapter enabled for our windows VMs, according to the "ipconfig" command, we can see DHCP is enabled but failed as our IP is an APIPA IP.
 	
 	![screenshot](screenshot.png)
