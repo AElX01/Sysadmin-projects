@@ -29,10 +29,10 @@ Get-NetAdapter #list all network adapters
 Get-NetAdapter | Select ifIndex #we can obtain the index of the network adapter we'll configure
 ```
 	
-	![[Pasted image 20240517151825.png]]
+	![screenshot](Images/Pasted image 20240517151825.png)
 	Remember we have the Host-Only network adapter enabled for our windows VMs, according to the "ipconfig" command, we can see DHCP is enabled but failed as our IP is an APIPA IP.
 	
-	![[Pasted image 20240517152049.png]]
+	![screenshot](screenshot.png)
 
 
 2. **Disable DHCP in the interface you'll configure**
@@ -44,7 +44,7 @@ Check if it was satisfactory disabled by:
 Get-NetIPConfiguration -InterfaceIndex {index} -Detailed
 ```
 
-![[Pasted image 20240517153641.png]]
+![screenshot](screenshot.png)
 
 As we can see, dhcp ipv4 is disabled, thus we can assign now a static IP.
 
@@ -54,9 +54,9 @@ As we can see, dhcp ipv4 is disabled, thus we can assign now a static IP.
 New-NetIPAddress -InterfaceIndex 15 -IpAddress 192.168.100.x -PrefixLength 24
 ```
 
-![[Pasted image 20240517154327.png]]
+![screenshot](screenshot.png)
 
-![[Pasted image 20240517155041.png]]
+![screenshot](screenshot.png)
 
 
 4. **Ensure communication between machines**
@@ -64,10 +64,10 @@ Take into account that the Windows firewall blocks ICMP packets, before trying t
 
 
 Host 1
-![[Pasted image 20240517155935.png]]
+![screenshot](screenshot.png)
 
 Host 2
-![[Pasted image 20240517160004.png]]
+![screenshot](screenshot.png)
 
 
 
@@ -100,7 +100,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 ip a
 ```
 
-![[Pasted image 20240517160541.png]]
+![screenshot](screenshot.png)
 
 - Turning on the interface and assign the static ip as follows:
 ```bash
@@ -153,13 +153,13 @@ docker run -dti -p 8022:22 -p 8080:80 --name MyWebServer --memory "512m" --cpus=
 With all of this configurations, we should be able to access to the web resources on the container:
 
 **Web access trough port 8080**
-![[Pasted image 20240518151941.png]]
+![screenshot](screenshot.png)
 
 **SSH access to the machine**
-![[Pasted image 20240518152119.png]]
+![screenshot](screenshot.png)
 
 We can check we are on the container by executing the "ifconfig" command:
-![[Pasted image 20240518152201.png]]
+![screenshot](screenshot.png)
 
 
 *With this small project, you can familiarize a bit more with Linux and Windows systems as well as develop more confidence when navigating on a terminal*
