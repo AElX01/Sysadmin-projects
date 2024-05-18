@@ -157,6 +157,7 @@ With all of this configurations, we should be able to access to the web resource
 ![screenshot](https://github.com/AElX01/Sysadmin-projects/blob/f97456b557cf50a6f0b801f9c7a835bddadf4138/Images/Pasted%20image%2020240518151941.png)
 
 **SSH access to the machine**
+
 ![screenshot](https://github.com/AElX01/Sysadmin-projects/blob/f97456b557cf50a6f0b801f9c7a835bddadf4138/Images/Pasted%20image%2020240518152119.png)
 
 We can check we are on the container by executing the "ifconfig" command:
