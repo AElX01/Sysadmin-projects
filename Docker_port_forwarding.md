@@ -65,8 +65,11 @@ Take into account that the Windows firewall blocks ICMP packets, before trying t
 
 
 Host 1
+
 ![ScreenShot](https://github.com/AElX01/Sysadmin-projects/blob/9012e79878a1c3a9e72abc628777230001ac0ea0/Images/Pasted%20image%2020240517155935.png)
+
 Host 2
+
 ![ScreenShot](https://github.com/AElX01/Sysadmin-projects/blob/9012e79878a1c3a9e72abc628777230001ac0ea0/Images/Pasted%20image%2020240517160004.png)
 
 
