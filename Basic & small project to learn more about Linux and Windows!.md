@@ -1,3 +1,5 @@
+# Apache and open-ssh container server using docker with port forwarding
+
 -  *Set up three virtual machines, in this case, we'll use an Ubuntu Linux Server and two Windows 11 machines (I already have them installed on the system).*
 - In this small project, I'll set up three VMs (two windows machines and one Ubuntu Server). The ubuntu server will run a docker container with port forwarding for ssh and apache services. The container will also run with limited resources as the Ubuntu server doesn't have too much hardware assigned to operate with.
 - Physical equipment I'll use for this lab:
