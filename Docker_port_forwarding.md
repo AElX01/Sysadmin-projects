@@ -30,10 +30,11 @@ Get-NetAdapter #list all network adapters
 Get-NetAdapter | Select ifIndex #we can obtain the index of the network adapter we'll configure
 ```
 	
-	![[Pasted image 20240517151825.png]]
-	Remember we have the Host-Only network adapter enabled for our windows VMs, according to the "ipconfig" command, we can see DHCP is enabled but failed as our IP is an APIPA IP.
+![ScreenShot](https://github.com/AElX01/Sysadmin-projects/blob/9012e79878a1c3a9e72abc628777230001ac0ea0/Images/Pasted%20image%2020240517151825.png)
+
+Remember we have the Host-Only network adapter enabled for our windows VMs, according to the "ipconfig" command, we can see DHCP is enabled but failed as our IP is an APIPA IP.
 	
-	![[Pasted image 20240517152049.png]]
+![ScreenShot](https://github.com/AElX01/Sysadmin-projects/blob/9012e79878a1c3a9e72abc628777230001ac0ea0/Images/Pasted%20image%2020240517152049.png)
 
 
 2. **Disable DHCP in the interface you'll configure**
@@ -45,7 +46,7 @@ Check if it was satisfactory disabled by:
 Get-NetIPConfiguration -InterfaceIndex {index} -Detailed
 ```
 
-![[Pasted image 20240517153641.png]]
+![ScreenShot](https://github.com/AElX01/Sysadmin-projects/blob/9012e79878a1c3a9e72abc628777230001ac0ea0/Images/Pasted%20image%2020240517153641.png)
 
 As we can see, dhcp ipv4 is disabled, thus we can assign now a static IP.
 
@@ -55,21 +56,18 @@ As we can see, dhcp ipv4 is disabled, thus we can assign now a static IP.
 New-NetIPAddress -InterfaceIndex 15 -IpAddress 192.168.100.x -PrefixLength 24
 ```
 
-![[Pasted image 20240517154327.png]]
+![ScreenShot](https://github.com/AElX01/Sysadmin-projects/blob/9012e79878a1c3a9e72abc628777230001ac0ea0/Images/Pasted%20image%2020240517154327.png)
 
-![[Pasted image 20240517155041.png]]
-
+![ScreenShot](https://github.com/AElX01/Sysadmin-projects/blob/9012e79878a1c3a9e72abc628777230001ac0ea0/Images/Pasted%20image%2020240517155041.png)
 
 4. **Ensure communication between machines**
 Take into account that the Windows firewall blocks ICMP packets, before trying to ping a host, make sure you configure the firewall to allow ICMP packets from the inbound rules.
 
 
 Host 1
-![[Pasted image 20240517155935.png]]
-
+![ScreenShot](https://github.com/AElX01/Sysadmin-projects/blob/9012e79878a1c3a9e72abc628777230001ac0ea0/Images/Pasted%20image%2020240517155935.png)
 Host 2
-![[Pasted image 20240517160004.png]]
-
+![ScreenShot](https://github.com/AElX01/Sysadmin-projects/blob/9012e79878a1c3a9e72abc628777230001ac0ea0/Images/Pasted%20image%2020240517160004.png)
 
 
 #### Linux server
@@ -101,7 +99,7 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 ip a
 ```
 
-![[Pasted image 20240517160541.png]]
+![ScreenShot](https://github.com/AElX01/Sysadmin-projects/blob/9012e79878a1c3a9e72abc628777230001ac0ea0/Images/Pasted%20image%2020240517160541.png)
 
 - Turning on the interface and assign the static ip as follows:
 ```bash
@@ -154,14 +152,13 @@ docker run -dti -p 8022:22 -p 8080:80 --name MyWebServer --memory "512m" --cpus=
 With all of this configurations, we should be able to access to the web resources on the container:
 
 **Web access trough port 8080**
-![[Pasted image 20240518151941.png]]
+![ScreenShot](https://github.com/AElX01/Sysadmin-projects/blob/9012e79878a1c3a9e72abc628777230001ac0ea0/Images/Pasted%20image%2020240518151941.png)
 
 **SSH access to the machine**
-![[Pasted image 20240518152119.png]]
+![ScreenShot](https://github.com/AElX01/Sysadmin-projects/blob/9012e79878a1c3a9e72abc628777230001ac0ea0/Images/Pasted%20image%2020240518152119.png)
 
 We can check we are on the container by executing the "ifconfig" command:
-![[Pasted image 20240518152201.png]]
-
+![ScreenShot](https://github.com/AElX01/Sysadmin-projects/blob/9012e79878a1c3a9e72abc628777230001ac0ea0/Images/Pasted%20image%2020240518152201.png)
 
 *With this small project, you can familiarize a bit more with Linux and Windows systems as well as develop more confidence when navigating on a terminal*
 
